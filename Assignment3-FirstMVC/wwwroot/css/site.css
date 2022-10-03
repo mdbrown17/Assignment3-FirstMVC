@@ -2,6 +2,11 @@ html {
   font-size: 14px;
 }
 
+body {
+    background-color: lightblue; 
+    margin-bottom: 60px;
+}
+
 @media (min-width: 768px) {
   html {
     font-size: 16px;
@@ -13,6 +18,7 @@ html {
   min-height: 100%;
 }
 
-body {
-  margin-bottom: 60px;
+h4 {
+    color: white;
+    font: Arial, sans-serif;
 }

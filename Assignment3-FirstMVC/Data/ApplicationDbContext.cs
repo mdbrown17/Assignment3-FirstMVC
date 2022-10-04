@@ -11,5 +11,6 @@ namespace Assignment3_FirstMVC.Data
         {
         }
         public DbSet<Assignment3_FirstMVC.Data.Movie> Movie { get; set; }
+        public DbSet<Assignment3_FirstMVC.Data.Actor> Actor { get; set; }
     }
 }

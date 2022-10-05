@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Assignment3_FirstMVC.Data
+namespace Assignment3_FirstMVC.Models
 {
     public class Actor
     {
@@ -9,7 +9,7 @@ namespace Assignment3_FirstMVC.Data
         public string? Gender { get; set; }
         public int? Age { get; set; }
         public string? ImdbHyperLink { get; set; }
-        public string? Photo { get; set; }
+        public byte[]? Photo { get; set; }
 
         [ForeignKey("Movie")]
         public int? MovieID { get; set; }

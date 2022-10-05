@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Assignment3_FirstMVC.Data.Movie>
+﻿@model IEnumerable<Movie>
 
 @{
     ViewData["Title"] = "Index";
@@ -47,6 +47,16 @@
                 @Html.DisplayFor(modelItem => item.RealeaseYear)
             </td>
             <td>
+
+                @if (item.Poster != null)
+                {
+                    @*var base64 = Convert.ToBase64String(item.Poster);
+                    var imgSrc = string.Format("data:image/jpg;base64,{0}", base64);
+                    <img src="@imgSrc" height="100" width="100" style="border-radius: 25%"/>*@
+
+                    <img width="100" height="100" src="@Url.Action("GetPoster", "Movies", new {item.Id})" />
+                }
+
                 @Html.DisplayFor(modelItem => item.Poster)
             </td>
             <td>

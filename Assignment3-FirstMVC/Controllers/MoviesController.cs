@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Assignment3_FirstMVC.Data;
+using Assignment3_FirstMVC.Models;
 
 namespace Assignment3_FirstMVC.Controllers
 {
@@ -16,6 +17,19 @@ namespace Assignment3_FirstMVC.Controllers
         public MoviesController(ApplicationDbContext context)
         {
             _context = context;
+        }
+
+        public async Task<IActionResult> GetPoster(int id)
+        {
+            var movie = await _context.Movie
+                 .FirstOrDefaultAsync(m => m.Id == id);
+            if (movie == null)
+            {
+                return NotFound();
+            }
+            var imageData = movie.Poster;
+
+            return File(imageData, "image/jpg");
         }
 
         // GET: Movies
@@ -53,10 +67,16 @@ namespace Assignment3_FirstMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,ImdbHyperlink,Genre,RealeaseYear,Poster")] Movie movie)
+        public async Task<IActionResult> Create([Bind("Id,Title,ImdbHyperlink,Genre,RealeaseYear")] Movie movie, IFormFile Poster)
         {
             if (ModelState.IsValid)
             {
+                if (Poster != null && Poster.Length > 0)
+                {
+                    var memoryStream = new MemoryStream();
+                    await Poster.CopyToAsync(memoryStream);
+                    movie.Poster = memoryStream.ToArray();
+                }
                 _context.Add(movie);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

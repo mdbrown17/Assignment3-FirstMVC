@@ -18,7 +18,7 @@ namespace Assignment3_FirstMVC.Data.Migrations
                     ImdbHyperlink = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Genre = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     RealeaseYear = table.Column<int>(type: "int", nullable: true),
-                    Poster = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Poster = table.Column<string>(type: "varbinary(max)", nullable: true)
                 },
                 constraints: table =>
                 {

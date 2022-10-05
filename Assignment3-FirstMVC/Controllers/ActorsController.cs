@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Assignment3_FirstMVC.Data;
+using Assignment3_FirstMVC.Models;
 
 namespace Assignment3_FirstMVC.Controllers
 {

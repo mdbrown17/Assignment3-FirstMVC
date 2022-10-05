@@ -18,7 +18,7 @@ namespace Assignment3_FirstMVC.Data.Migrations
                     Gender = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Age = table.Column<int>(type: "int", nullable: true),
                     ImdbHyperLink = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Photo = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Photo = table.Column<string>(type: "varbinary(max)", nullable: true),
                     MovieID = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>

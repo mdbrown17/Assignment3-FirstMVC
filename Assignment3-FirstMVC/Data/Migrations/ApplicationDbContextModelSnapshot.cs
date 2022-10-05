@@ -22,7 +22,7 @@ namespace Assignment3_FirstMVC.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Assignment3_FirstMVC.Data.Actor", b =>
+            modelBuilder.Entity("Assignment3_FirstMVC.Models.Actor", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -45,8 +45,8 @@ namespace Assignment3_FirstMVC.Data.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Photo")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<byte[]>("Photo")
+                        .HasColumnType("varbinary(max)");
 
                     b.HasKey("Id");
 
@@ -55,7 +55,7 @@ namespace Assignment3_FirstMVC.Data.Migrations
                     b.ToTable("Actor");
                 });
 
-            modelBuilder.Entity("Assignment3_FirstMVC.Data.Movie", b =>
+            modelBuilder.Entity("Assignment3_FirstMVC.Models.Movie", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -69,8 +69,8 @@ namespace Assignment3_FirstMVC.Data.Migrations
                     b.Property<string>("ImdbHyperlink")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Poster")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<byte[]>("Poster")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<int?>("RealeaseYear")
                         .HasColumnType("int");
@@ -285,9 +285,9 @@ namespace Assignment3_FirstMVC.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Assignment3_FirstMVC.Data.Actor", b =>
+            modelBuilder.Entity("Assignment3_FirstMVC.Models.Actor", b =>
                 {
-                    b.HasOne("Assignment3_FirstMVC.Data.Movie", "Movie")
+                    b.HasOne("Assignment3_FirstMVC.Models.Movie", "Movie")
                         .WithMany()
                         .HasForeignKey("MovieID");
 

@@ -1,0 +1,9 @@
+name:
+521-assignment3-mattbrown
+
+admin:
+mis521-assignment3-admin
+
+Crimson2022!
+
+Server=tcp:521-assignment3-mattbrown.database.windows.net,1433;Initial Catalog=MoviesActorsDB;Persist Security Info=False;User ID=mis521-assignment3-admin;Password=Crimson2022!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;

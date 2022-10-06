@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Assignment3_FirstMVC.Data;
 using Assignment3_FirstMVC.Models;
+using Tweetinvi;
+using VaderSharp2;
 
 namespace Assignment3_FirstMVC.Controllers
 {
@@ -55,9 +57,23 @@ namespace Assignment3_FirstMVC.Controllers
 
             MovieDetailsVM movieDetailsVM = new MovieDetailsVM();
             movieDetailsVM.movie = movie;
+            movieDetailsVM.Tweets = new List<MovieTweets>();
 
+            var userClient = new TwitterClient("w5bxWbjaGX5SVQadf5BydfKxU", "Bpg9117FFprnciUGb4b0q4I1fnbb3fN8lpSzS7N4vJInCpNxRw", "1577812753317875712-on1iqcHDltw2Z0ESzXPDw1jV63803B", "4mp0ICs4Xht4hCZcXvOs23BOyKRYF0cR8zMsBb5b3ymGR");
+            var searchResponse = await userClient.SearchV2.SearchTweetsAsync(movie.Title);
+            var tweets = searchResponse.Tweets;
+            var analyzer = new SentimentIntensityAnalyzer();
 
-            return View(movie);
+            foreach (var tweetText in tweets)
+            {
+                var tweet = new MovieTweets();
+                tweet.TweetText = tweetText.Text;
+                var results = analyzer.PolarityScores(tweet.TweetText);
+                tweet.Sentiment = results.Compound;
+                movieDetailsVM.Tweets.Add(tweet);
+            }
+
+            return View(movieDetailsVM);
         }
 
         // GET: Movies/Create

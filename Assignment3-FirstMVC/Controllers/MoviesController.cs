@@ -105,7 +105,7 @@ namespace Assignment3_FirstMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,ImdbHyperlink,Genre,RealeaseYear,Poster")] Movie movie)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,ImdbHyperlink,Genre,RealeaseYear, Poster")] Movie movie)
         {
             if (id != movie.Id)
             {

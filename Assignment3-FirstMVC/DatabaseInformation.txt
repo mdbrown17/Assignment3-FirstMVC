@@ -7,3 +7,17 @@ mis521-assignment3-admin
 Crimson2022!
 
 Server=tcp:521-assignment3-mattbrown.database.windows.net,1433;Initial Catalog=MoviesActorsDB;Persist Security Info=False;User ID=mis521-assignment3-admin;Password=Crimson2022!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
+
+
+Twitter:
+
+
+API Key:
+w5bxWbjaGX5SVQadf5BydfKxU
+
+Secret Key:
+Bpg9117FFprnciUGb4b0q4I1fnbb3fN8lpSzS7N4vJInCpNxRw
+
+Bearer Token:
+AAAAAAAAAAAAAAAAAAAAAH9shwEAAAAAdrrIdmMByk4xVNSFf1h8XyGmxRY%3DEKE1LRaYBT3DStRValWEevkwHXFgUCa53VCUP15g2zMPtzYLvN
+

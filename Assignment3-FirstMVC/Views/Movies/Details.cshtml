@@ -1,4 +1,4 @@
-﻿@model Movie
+﻿@model MovieDetailsVM
 
 @{
     ViewData["Title"] = "Details";
@@ -12,31 +12,31 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
+            @Html.DisplayNameFor(model => model.movie.Title)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Title)
+            @Html.DisplayFor(model => model.movie.Title)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ImdbHyperlink)
+            @Html.DisplayNameFor(model => model.movie.ImdbHyperlink)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ImdbHyperlink)
+            @Html.DisplayFor(model => model.movie.ImdbHyperlink)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Genre)
+            @Html.DisplayNameFor(model => model.movie.Genre)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Genre)
+            @Html.DisplayFor(model => model.movie.Genre)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.RealeaseYear)
+            @Html.DisplayNameFor(model => model.movie.RealeaseYear)
         </dt> 
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.RealeaseYear)
+            @Html.DisplayFor(model => model.movie.RealeaseYear)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Poster)
+            @Html.DisplayNameFor(model => model.movie.Poster)
         </dt>
         <dd class = "col-sm-10">
 @*            @Html.DisplayFor(model => model.Poster)

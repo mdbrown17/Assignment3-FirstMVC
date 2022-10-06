@@ -53,6 +53,10 @@ namespace Assignment3_FirstMVC.Controllers
                 return NotFound();
             }
 
+            MovieDetailsVM movieDetailsVM = new MovieDetailsVM();
+            movieDetailsVM.movie = movie;
+
+
             return View(movie);
         }
 

@@ -10,9 +10,5 @@ namespace Assignment3_FirstMVC.Models
         public int? Age { get; set; }
         public string? ImdbHyperLink { get; set; }
         public byte[]? Photo { get; set; }
-
-        [ForeignKey("Movie")]
-        public int? MovieID { get; set; }
-        public Movie? Movie { get; set; }
     }
 }

@@ -10,7 +10,7 @@ namespace Assignment3_FirstMVC.Data
             : base(options)
         {
         }
-        public DbSet<Movie> Movie { get; set; }
-        public DbSet<Actor> Actor { get; set; }
+        /*public DbSet<Movie> Movie { get; set; }
+        public DbSet<Actor> Actor { get; set; }*/
     }
 }
